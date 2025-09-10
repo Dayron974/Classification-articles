@@ -1,0 +1,3 @@
+#!/bin/bash
+/opt/classification_articles/bin/python3 /usr/lib/classification_articles/interfacegraphique.py "$@"
+

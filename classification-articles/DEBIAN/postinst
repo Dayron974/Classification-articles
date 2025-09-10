@@ -1,0 +1,17 @@
+#!/bin/bash
+
+python3 -m venv /opt/classification_articles
+ret0=$?
+
+source /opt/classification_articles/bin/activate
+ret1=$?
+
+# Installer les dépendances Python spécifiées dans requirements.txt
+/opt/classification_articles/bin/pip3 install joblib==1.3.1 spacy==3.6.1 scikit-learn==1.3.0
+ret2=$?
+
+# Télécharger le modèle SpaCy
+/opt/classification_articles/bin/python3 -m spacy download fr_core_news_sm
+ret3=$?
+
+exit $ret0 || $ret1 || $ret2 || $ret3
